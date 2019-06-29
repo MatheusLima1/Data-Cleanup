@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2018.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">C:\Users\matheus\Downloads\arquivos_para_enviar\outputs\densidade-demografica.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>densidade-demografica.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="City" size="17" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="V_String" />
+            <Field name="County" size="11" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="String" />
+            <Field name="Land Area" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Double" />
+            <Field name="Households with Under 18" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Int16" />
+            <Field name="Population Density" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Double" />
+            <Field name="Total Families" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>web-scrape.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="City" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" />
+            <Field name="Country" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" />
+            <Field name="2000 Census" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" />
+            <Field name="2010 Census" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" />
+            <Field name="2014 Estimate" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">G:\Udacity\Módulo 9\Projeto pra valer\outputs\vendas-mensais-2010.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>vendas-mensais-2010.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="CITY" size="12" source="Summarize: GroupBy - CITY" type="String" />
+            <Field name="Sum_Value" source="Summarize: Sum - Value" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="186" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <AutoResetMode>ByName</AutoResetMode>
+          <MultiMetaInfo>
+            <MetaInfo name="#1">
+              <RecordInfo>
+                <Field name="City" size="17" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="V_String" column="1" />
+                <Field name="County" size="11" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="String" column="2" />
+                <Field name="Land Area" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Double" column="3" />
+                <Field name="Households with Under 18" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Int16" column="4" />
+                <Field name="Population Density" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Double" column="5" />
+                <Field name="Total Families" source="File: G:\Udacity\Módulo 9\Projeto pra valer\p2-wy-demographic-data.csv" type="Double" column="6" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#2">
+              <RecordInfo>
+                <Field name="City" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" column="1" />
+                <Field name="Country" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" column="7" />
+                <Field name="2000 Census" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" column="8" />
+                <Field name="2010 Census" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" column="9" />
+                <Field name="2014 Estimate" size="254" source="File: G:\Udacity\Módulo 9\Projeto pra valer\outputs\web-scrape.csv" type="V_String" column="10" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo name="#3">
+              <RecordInfo>
+                <Field name="CITY" size="12" source="Summarize: GroupBy - CITY" type="String" column="1" />
+                <Field name="Sum_Value" source="Summarize: Sum - Value" type="Int64" column="11" />
+              </RecordInfo>
+            </MetaInfo>
+          </MultiMetaInfo>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ManualDelayed</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="294" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="City" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>City - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings>
+        <Position x="498" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"City"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1014" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Sum_Sum_Census Population" action="Sum" rename="Census Population" />
+            <SummarizeField field="Sum_Sum_Total pawndacitySales" action="Sum" rename="Total pawndacitySales" />
+            <SummarizeField field="Sum_Sum_Households with Under 18" action="Sum" rename="Households with Under 18" />
+            <SummarizeField field="Sum_Sum_Land Area" action="Sum" rename="Land Area" />
+            <SummarizeField field="Sum_Sum_Population Density" action="Sum" rename="Population Density" />
+            <SummarizeField field="Sum_Sum_Total Families" action="Sum" rename="Total Families" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="738" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsNull([Sum_Total pawndacitySales])</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Sum_Total pawndacitySales</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-02-19 21:26:10</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2019-02-19 21:26:10</StartDate>
+              <EndDate>2019-02-19 21:26:10</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Sum_Total pawndacitySales])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="930" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="City" action="GroupBy" rename="City" />
+            <SummarizeField field="Sum_Land Area" action="Sum" rename="Sum_Sum_Land Area" />
+            <SummarizeField field="Sum_Households with Under 18" action="Sum" rename="Sum_Sum_Households with Under 18" />
+            <SummarizeField field="Sum_Population Density" action="Sum" rename="Sum_Sum_Population Density" />
+            <SummarizeField field="Sum_Total Families" action="Sum" rename="Sum_Sum_Total Families" />
+            <SummarizeField field="Sum_Census Population" action="Sum" rename="Sum_Sum_Census Population" />
+            <SummarizeField field="Sum_Total pawndacitySales" action="Sum" rename="Sum_Sum_Total pawndacitySales" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="834" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="City" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="City" size="12" source="Summarize: GroupBy - City" type="String" />
+            <Field name="Sum_Land Area" source="Summarize: Sum - Land Area" type="Double" />
+            <Field name="Sum_Households with Under 18" source="Summarize: Sum - Households with Under 18" type="Int64" />
+            <Field name="Sum_Population Density" source="Summarize: Sum - Population Density" type="Double" />
+            <Field name="Sum_Total Families" source="Summarize: Sum - Total Families" type="Double" />
+            <Field name="Sum_Census Population" source="Summarize: Sum - Census Population" type="Double" />
+            <Field name="Sum_Total pawndacitySales" source="Summarize: Sum - Total pawndacitySales" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="654" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="City" action="GroupBy" rename="City" />
+            <SummarizeField field="Land Area" action="Sum" rename="Sum_Land Area" />
+            <SummarizeField field="Households with Under 18" action="Sum" rename="Sum_Households with Under 18" />
+            <SummarizeField field="Population Density" action="Sum" rename="Sum_Population Density" />
+            <SummarizeField field="Total Families" action="Sum" rename="Sum_Total Families" />
+            <SummarizeField field="Census Population" action="Sum" rename="Sum_Census Population" />
+            <SummarizeField field="Total pawndacitySales" action="Sum" rename="Sum_Total pawndacitySales" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="402" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="County" selected="False" />
+            <SelectField field="Country" selected="False" />
+            <SelectField field="2000 Census" selected="False" />
+            <SelectField field="2010 Census" selected="True" rename="Census Population" type="Double" size="8" />
+            <SelectField field="2014 Estimate" selected="False" />
+            <SelectField field="Sum_Value" selected="True" rename="Total pawndacitySales" />
+            <SelectField field="Input_#1_City" selected="False" rename="City" />
+            <SelectField field="Input_#2_CITY" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="210" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="City" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>City - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection name="#1">
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output26" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="True" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="34" Connection="Input2" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Projeto final entrega</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
